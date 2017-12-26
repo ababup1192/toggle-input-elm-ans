@@ -98,7 +98,7 @@ update msg ({ displayText, lastKey, numOfPush } as model) =
 
 lastChar : Key -> Int -> Char
 lastChar key numOfPush =
-    case List.head (List.drop (numOfPush % (List.length <| selectChars key)) (selectChars key)) of
+    case List.head <| List.drop (numOfPush % (List.length <| selectChars key)) (selectChars key) of
         Just c ->
             c
 
